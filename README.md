@@ -10,4 +10,3 @@ This project is a clone of twitter which acts as an Internal microblog for GoTro
 # Run Instructions
 
 - Run 'rails server'
-
