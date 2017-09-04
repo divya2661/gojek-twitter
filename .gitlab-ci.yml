@@ -3,5 +3,5 @@ before_script:
   - bundle install --jobs $(nproc)  "${FLAGS[@]}"
 rake:
   script:
-   - bundle exec rake
+   - bundle exec rspec
 
