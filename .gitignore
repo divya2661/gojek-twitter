@@ -7,3 +7,4 @@
 .byebug_history
 .DS_Store
 requirements.txt
+log/*
