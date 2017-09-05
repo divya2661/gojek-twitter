@@ -1,0 +1,11 @@
+image: "artifactory-gojek.golabs.io:6555/cx-ruby:2.4.1"
+
+before_script:
+  - apt-get update -qq && apt-get install -y -qq sqlite3 libsqlite3-dev nodejs
+  - gem install bundler --no-ri --no-rdoc
+  - bundle install --jobs $(nproc)  "${FLAGS[@]}"
+
+rspec:
+  script:
+   - bundle exec rspec
+

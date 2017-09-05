@@ -1,13 +1,30 @@
 # Project Description
 This project is a clone of twitter which acts as an Internal microblog for GoTroopers at Go-Jek. Main aim of this project is to decrease communication gap between people and provide internal platform for discussions.
 
-# Local Setup
+# Development Environment Setup
 
-- Install Ruby version:2.4.1 from 'git@source.golabs.io:bootcamp/gojek-twitter.git'
+- Ruby version:2.4.1
+- Rails version:5.1.3
+- Bundle 1.15.1
+- sqlite3 3.8.7
 
-- Install Ruby on Rails version:5.1.3 by running 'gem install rails'
+Reference: [Rails setup instructions for different operating systems](https://gorails.com/setup/osx/10.12-sierra)
 
 # Run Instructions
 
-- Run 'rails server'
+### Install dependencies
 
+```
+$ bundle install
+```
+
+### Run Tests
+```
+$ bundle exec rspec
+```
+
+### Run Server
+
+```
+$ rails server
+```
