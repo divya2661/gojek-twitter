@@ -27,6 +27,17 @@ RSpec.describe User, type: :model do
       end
     end
 
+    context "email validation" do
+      it "non-gojek email addresses should be invalid" do
+        @user.email = 'abcxyz@gmail.com'
+        expect(@user.valid?).not_to be true
+      end
+      it "gojek email address should be valid" do
+        @user.email = "divya.n@go-jek.com"
+        expect(@user.valid?).to be true
+      end
+    end
+
   end
 
 end
