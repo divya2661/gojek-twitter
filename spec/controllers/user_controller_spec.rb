@@ -10,6 +10,9 @@ RSpec.describe UserController, type: :request do
       it "response should be non-empty" do
         expect(JSON.parse(response.body)).not_to be_empty
       end
+      it "response code should be 200" do
+        expect(JSON.parse(response.code)).to eq 200
+      end
     end
   end
 end
