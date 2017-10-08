@@ -61,6 +61,16 @@ RSpec.describe User, type: :model do
       end
     end
 
+    context "if a user passes an email address in mixed cases" do
+      it "it should be saved as lowercase" do
+        email = "EmaIL@go-jek.com"
+        @user.email = email
+        @user.save
+        @user.reload
+        expect(@user.email).to eql email.downcase
+      end
+    end
+
   end
 
 end
