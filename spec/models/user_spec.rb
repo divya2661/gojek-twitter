@@ -53,6 +53,12 @@ RSpec.describe User, type: :model do
         @user.save
         expect(duplicate_user.valid?).to be false
       end
+      it "should implement uniqueness if duplicate email address has a different case" do
+        duplicate_user = @user.dup
+        duplicate_user.email = "EmaIl@go-jek.com"
+        @user.save
+        expect(duplicate_user.valid?).to be false
+      end
     end
 
   end
