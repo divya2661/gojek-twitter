@@ -40,4 +40,21 @@ RSpec.describe User, type: :model do
 
   end
 
+  describe "uniqueness validations" do
+
+    before(:each) do
+      @user = User.new(name: "user", email: "email@go-jek.com")
+    end
+
+    context "when a new user registers with an existence email" do
+      it "should implement uniqueness of email addresses" do
+        duplicate_user = @user.dup
+        duplicate_user.name = "dup_name"
+        @user.save
+        expect(duplicate_user.valid?).to be false
+      end
+    end
+
+  end
+
 end
