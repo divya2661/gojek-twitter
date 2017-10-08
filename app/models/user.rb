@@ -3,4 +3,5 @@ class User < ApplicationRecord
   validates :name, length: {maximum: 100}
   validates :email, length: {maximum: 100}, format: { with: /\A[\w+\-.]+@go-jek.com/i}
 
+  has_secure_password
 end
