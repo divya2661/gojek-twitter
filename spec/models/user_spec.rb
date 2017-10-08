@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
   describe "length validations" do
 
     before(:each) do
-      @user = User.new(name: "user", email: "email")
+      @user = User.new(name: "user", email: "email", password: "password", password_confirmation: "password")
     end
 
     context "when length of name is more than 100 chars" do

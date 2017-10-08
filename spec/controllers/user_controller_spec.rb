@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UserController, type: :request do
   describe "POST /new" do
-    let("valid_user") { { name: "anirudh", email: "anirudh.v@go-jek.com" } }
+    let("valid_user") { { name: "anirudh", email: "anirudh.v@go-jek.com", password: "password", password_confirmation: "password" } }
     let("invalid_user") { { name: "asd", email: "ada@gmail.com" } }
 
     context "when the request is valid" do
@@ -24,7 +24,8 @@ RSpec.describe UserController, type: :request do
   end
 
   describe "DELETE /delete" do
-    let("valid_user") { { name: "anirudh", email: "anirudh.v@go-jek.com" }}
+    let("valid_user") { { name: "anirudh", email: "anirudh.v@go-jek.com", password: "password", password_confirmation: "password" } }
+    let("invalid_user") { { name: "asd", email: "ada@gmail.com" } }
     context "when delete is successful" do
       it "returns 200" do
          post '/user', params: valid_user
