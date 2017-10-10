@@ -55,7 +55,7 @@ RSpec.describe User, type: :model do
   describe "uniqueness validations" do
 
     before(:each) do
-      @user = User.new(name: "user", email: "email@go-jek.com")
+      @user = User.new(name: "user", email: "email@go-jek.com", password: "password")
     end
 
     context "when a new user registers with an existence email" do
@@ -79,7 +79,7 @@ RSpec.describe User, type: :model do
         @user.email = email
         @user.save
         @user.reload
-        expect(@user.email).to eql email.downcase
+				expect(@user.email).to eql email.downcase
       end
     end
 
