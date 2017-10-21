@@ -5,7 +5,28 @@ before_script:
   - gem install bundler --no-ri --no-rdoc
   - bundle install --jobs $(nproc)  "${FLAGS[@]}"
 
-rspec:
+stages:
+  - build
+  - deploy
+
+test:
+  stage: build
   script:
    - bundle exec rspec
 
+staging:
+  stage: deploy
+  script:
+    - gem install dpl --no-ri --no-rdoc
+    - dpl --provider=heroku --app=gojek-twitter-integration --api-key=$HEROKU_STAGING_API_KEY
+  only:
+    - master
+
+production:
+  stage: deploy
+  script:
+    - gem install dpl --no-ri --no-rdoc
+    - dpl --provider=heroku --app=gojek-twitter --api-key=$HEROKU_STAGING_API_KEY
+  only:
+    - master
+  when: manual
