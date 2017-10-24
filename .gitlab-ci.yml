@@ -7,7 +7,7 @@ stages:
 test:
   stage: build
   script:
-  - sudo apt-get install -y postgresql postgresql-client libpq-dev
+  - apt-get install -y postgresql postgresql-client libpq-dev
   - gem install bundler --no-ri --no-rdoc
   - bundle install --jobs $(nproc)  "${FLAGS[@]}"
   - bundle exec rspec
