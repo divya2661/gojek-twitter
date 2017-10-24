@@ -1,5 +1,19 @@
 image: "artifactory-gojek.golabs.io:6555/cx-ruby:2.4.1"
 
+services:
+  - postgres
+
+variables:
+  POSTGRES_DB: "twitter_test"
+  POSTGRES_USER: "runner"
+  POSTGRES_PASSWORD: ""
+
+connect:
+  image: postgres
+  script:
+  - export PGPASSWORD=$POSTGRES_PASSWORD
+  - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
+
 stages:
   - build
   - deploy
