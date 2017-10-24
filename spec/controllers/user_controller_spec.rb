@@ -29,7 +29,8 @@ RSpec.describe UserController, type: :request do
     context "when delete is successful" do
       it "returns 200" do
          post '/user', params: valid_user
-         delete '/user/1'
+         @user_id = JSON.parse(response.body)['user']['id']
+         delete '/user/' + @user_id.to_s
          expect(JSON.parse(response.code)).to eq 200
       end
     end

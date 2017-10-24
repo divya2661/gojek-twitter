@@ -7,7 +7,7 @@ end
 
 
 gem 'rails', '~> 5.1.3'
-gem 'sqlite3'
+gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'bcrypt', '>= 3'
 group :development, :test do
