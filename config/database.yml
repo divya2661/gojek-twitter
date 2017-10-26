@@ -11,7 +11,7 @@ test:
   <<: *default
   database: twitter_test
   user: runner
-  host: localhost
+  host: postgres
 
 production:
   <<: *default
