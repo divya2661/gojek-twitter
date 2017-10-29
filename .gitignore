@@ -8,7 +8,7 @@
 /node_modules
 /yarn-error.log
 Procfile*
-.*~
+*~
 .byebug_history
 /public/packs
 /public/packs-test
