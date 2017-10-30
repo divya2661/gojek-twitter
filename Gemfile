@@ -17,7 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem "react_on_rails", "10.0.0"
 gem "webpacker", "~> 3.0"
 gem "rake", "~> 12.2.1"
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
