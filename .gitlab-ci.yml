@@ -22,6 +22,7 @@ staging:
   stage: deploy
   script:
     - gem install dpl --no-ri --no-rdoc
+    - rake assets:precompile
     - dpl --provider=heroku --app=gojek-twitter-integration --api-key=$HEROKU_STAGING_API_KEY
   only:
     - master
@@ -30,6 +31,7 @@ production:
   stage: deploy
   script:
     - gem install dpl --no-ri --no-rdoc
+    - rake assets:precompile
     - dpl --provider=heroku --app=gojek-twitter --api-key=$HEROKU_STAGING_API_KEY
   only:
     - master
