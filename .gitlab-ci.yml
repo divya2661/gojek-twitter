@@ -23,7 +23,7 @@ staging:
   script:
     - gem install dpl --no-ri --no-rdoc
     - rake assets:precompile
-    - dpl --provider=heroku --app=gojek-twitter-integration --api-key=$HEROKU_STAGING_API_KEY
+    - dpl --provider=heroku --app=glacial-ravine-58535 --api-key=$HEROKU_STAGING_API_KEY
   only:
     - master
 
@@ -32,7 +32,7 @@ production:
   script:
     - gem install dpl --no-ri --no-rdoc
     - rake assets:precompile
-    - dpl --provider=heroku --app=gojek-twitter --api-key=$HEROKU_STAGING_API_KEY
+    - dpl --provider=heroku --app=glacial-ravine-5853 --api-key=$HEROKU_STAGING_API_KEY
   only:
     - master
   when: manual
