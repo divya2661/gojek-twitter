@@ -22,7 +22,6 @@ staging:
   stage: deploy
   script:
     - gem install dpl --no-ri --no-rdoc
-    - rake assets:precompile
     - dpl --provider=heroku --app=glacial-ravine-58535 --api-key=$HEROKU_STAGING_API_KEY
   only:
     - master
@@ -31,7 +30,6 @@ production:
   stage: deploy
   script:
     - gem install dpl --no-ri --no-rdoc
-    - rake assets:precompile
     - dpl --provider=heroku --app=glacial-ravine-5853 --api-key=$HEROKU_STAGING_API_KEY
   only:
     - master
