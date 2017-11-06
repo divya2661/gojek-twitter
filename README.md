@@ -1,4 +1,4 @@
-[![Coverage report](https://gitlab.com/gitlab-org/gitlab-ce/badges/master/coverage.svg?job=coverage)](http://bootcamp.pages.golabs.io/gojek-twitter/coverage)
+[![Coverage report](https://source.golabs.io/bootcamp/gojek-twitter/badges/master/coverage.svg)](http://bootcamp.pages.golabs.io/gojek-twitter/coverage)
 
 # Project Description
 This project is a clone of twitter which acts as an Internal microblog for GoTroopers at Go-Jek. Main aim of this project is to decrease communication gap between people and provide internal platform for discussions.
