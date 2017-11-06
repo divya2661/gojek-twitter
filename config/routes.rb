@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-   get 'registration', to: 'registration#index'
+  get 'tweet/new'
+
+  get 'tweet/index'
+  get 'registration', to: 'registration#index'
   resources :user
+  resources :tweet
 end
 
