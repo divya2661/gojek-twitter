@@ -6,7 +6,7 @@ import React from 'react';
 import { ValidatorForm } from 'react-form-validator-core';
 import { TextValidator} from 'react-material-ui-form-validator';
 import PropTypes from 'prop-types';
-import {Route, Redirect} from 'react-router'
+
 class Register extends React.Component{
     constructor(props) {
 	super(props);
@@ -41,8 +41,8 @@ class Register extends React.Component{
 	axios.post(apiBaseUrl+'/user', payload).then(function (response) {
 	    console.log(response);
 	    if(response.data.status === 200) {
-		<Route exact path="/tweet" render={()=>(<Redirect to="/tweet" />)}/>
-		alert("Registration Successful");
+		localStorage.setItem("user_id", response.data.user.id)
+		window.location = "https://glacial-ravine-58535.herokuapp.com"
 	    }
 	    else{
 		alert("Could not register, Please try again.");
@@ -50,7 +50,6 @@ class Register extends React.Component{
 	}).catch(function (error) {
 	    console.log(error);
 	});
-
   }
 
     render() {
