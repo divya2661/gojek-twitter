@@ -30,7 +30,8 @@ class Register extends React.Component{
     }
 
     handleSubmit(event) {
-	var apiBaseUrl = "http://localhost:3000";
+	//TODO remove hardcoded values setup prod and local configs
+	var apiBaseUrl = "https://glacial-ravine-58535.herokuapp.com";
 	var payload={
 	   "name":this.state.formData.username,
 	   "email":this.state.formData.email,
@@ -40,7 +41,8 @@ class Register extends React.Component{
 	axios.post(apiBaseUrl+'/user', payload).then(function (response) {
 	    console.log(response);
 	    if(response.data.status === 200) {
-		alert("Registration Successful");
+		localStorage.setItem("user_id", response.data.user.id)
+		window.location = "https://glacial-ravine-58535.herokuapp.com"
 	    }
 	    else{
 		alert("Could not register, Please try again.");
@@ -48,7 +50,6 @@ class Register extends React.Component{
 	}).catch(function (error) {
 	    console.log(error);
 	});
-
   }
 
     render() {
