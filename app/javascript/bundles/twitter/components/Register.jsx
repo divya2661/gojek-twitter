@@ -42,7 +42,7 @@ class Register extends React.Component{
 	    console.log(response);
 	    if(response.data.status === 200) {
 		localStorage.setItem("user_id", response.data.user.id)
-		window.location = "https://glacial-ravine-58535.herokuapp.com"
+		window.location = "https://glacial-ravine-58535.herokuapp.com/tweet"
 	    }
 	    else{
 		alert("Could not register, Please try again.");
